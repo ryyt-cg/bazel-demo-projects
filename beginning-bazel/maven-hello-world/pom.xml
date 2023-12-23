@@ -61,7 +61,6 @@
   <groupId>com.raejz.hello</groupId>
 
   <modelVersion>4.0.0</modelVersion>
-  <!-- FIXME change it to the project's website -->
   <name>maven-hello-world</name>
 
   <properties>
