@@ -5,7 +5,9 @@
 * [Beginning Bazel - Build and Test Java, Go and more](#beginning-bazel---build-and-test-java-go-and-more)
     * [Create First Bazel Project](#create-first-bazel-project)
         * [Configure Bazel Project](#configure-bazel-project)
+        * [Adding Package & Source Code](#adding-package--source-code)
         * [Adding Source Code](#adding-source-code)
+    * [WORKSPACE FIle Functionality](#workspace-file-functionality)
 
 <!-- TOC -->
 
@@ -25,13 +27,13 @@ Bazel project.
 ### Adding Package & Source Code
 
 * Create a directory for Java src. Bazel does not require configuring maven-like project structure.
-  However, Java developers tend to create maven-like project.
+  By Java convention, let's create maven-like project.
 
 ```shell
 mkdir -pv java-hello-world/src/main/java/com/raejz/greet
 ```
 
-add HelloWorld.java and BUILD<br/>
+add HelloWorld.java and BUILD file<br/>
 add this to BUILD file to build java binary
 
 ```
@@ -90,6 +92,7 @@ bazel run maven-hello-world:MavenHelloWorld
 create java-multiplier directory<br/>
 add IntMultiplier.java
 add BUILD and insert this
+
 ```
 java_library(
     name = "IntMultiplierLib",
@@ -106,6 +109,7 @@ java_test(
 ```
 
 modify BUILD in java-hello-world and add a dependency
+
 ```
 deps = ["//java-multiplier:IntMultiplierLib"],
 ```

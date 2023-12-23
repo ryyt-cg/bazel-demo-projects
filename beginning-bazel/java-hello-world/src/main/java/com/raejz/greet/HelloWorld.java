@@ -1,7 +1,6 @@
 package com.raejz.greet;
 
 import com.raejz.multi.IntMultiplier;
-import java.io.PrintStream;
 
 public class HelloWorld {
 
