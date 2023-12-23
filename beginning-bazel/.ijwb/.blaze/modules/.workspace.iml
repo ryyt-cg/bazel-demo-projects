@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.system.id="Blaze" type="JAVA_MODULE" version="4">
+  <component name="Go" enabled="true" />
+  <component name="NewModuleRootManager">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../..">
+      <sourceFolder url="file://$MODULE_DIR$/../../../java-hello-world/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../java-multiplier/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../java-multiplier/src/test/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../maven-hello-world/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../maven-hello-world/src/test/java" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../.." />
+      <excludeFolder url="file://$MODULE_DIR$/../../../bazel-beginning-bazel" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../bazel-bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../bazel-genfiles" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../bazel-out" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../bazel-testlogs" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../maven-hello-world/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Runner_deploy-ijar_703e4ec0" level="project" />
+  </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="72835ec9-793e-4f1b-837b-f27ab28c9857" />
+  </component>
+</module>

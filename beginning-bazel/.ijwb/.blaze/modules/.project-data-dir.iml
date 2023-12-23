@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.system.id="Blaze" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../..">
+      <excludeFolder url="file://$MODULE_DIR$/.." />
+      <excludeFolder url="file://$MODULE_DIR$/../../.idea" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="e42c596a-6312-4928-8bf0-e1edad170dd8" />
+  </component>
+</module>
