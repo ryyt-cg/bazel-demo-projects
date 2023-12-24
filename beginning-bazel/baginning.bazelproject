@@ -2,9 +2,10 @@ directories:
   # Add the directories you want added as source here
   # By default, we've added your entire workspace ('.')
   .
+  go-echo-server
   java-hello-world
+  java-multiplier
   maven-hello-world
-  -maven-hello-world/target
 
 # Automatically includes all relevant targets under the 'directories' above
 derive_targets_from_directories: true
@@ -16,7 +17,7 @@ additional_languages:
   # Uncomment any additional languages you want supported
   # android
   # dart
-  # go
+  go
   # javascript
   # kotlin
   # python
