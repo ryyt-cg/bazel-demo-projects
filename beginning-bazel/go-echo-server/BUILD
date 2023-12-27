@@ -1,6 +1,14 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_binary")
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
 
 go_binary(
     name = "echo_server",
+    embed = [":go-echo-server_lib"],
+    visibility = ["//visibility:public"],
+)
+
+go_library(
+    name = "go-echo-server_lib",
     srcs = ["echo_server.go"],
+    importpath = "github.com/example/project/go-echo-server",
+    visibility = ["//visibility:private"],
 )
