@@ -1,0 +1,6 @@
+java_binary(
+    name = "java_echo_client",
+    srcs = ["src/main/java/com/raejz/firstbuf/EchoClient.java"],
+    main_class = "com.raejz.firstbuf.EchoClient",
+    deps = ["//first-protobuf:transmission_object_java_proto"],
+)

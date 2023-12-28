@@ -1,6 +1,6 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
-# gazelle:prefix github.com/example/project
+# gazelle:prefix gitlab.com/aionx/bazel-demo-projects/beginning-bazel
 gazelle(name = "gazelle")
 
 gazelle(

@@ -9,6 +9,6 @@ go_binary(
 go_library(
     name = "go-echo-server_lib",
     srcs = ["echo_server.go"],
-    importpath = "github.com/example/project/go-echo-server",
+    importpath = "gitlab.com/aionx/bazel-demo-projects/beginning-bazel/go-echo-server",
     visibility = ["//visibility:private"],
 )

@@ -194,7 +194,7 @@ add BUILD or BUILD.bazel file in root project
 ```
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
-# gazelle:prefix github.com/example/project
+# gazelle:prefix gitlab.com/aionx/bazel-demo-projects/beginning-bazel
 gazelle(name = "gazelle")
 ```
 After adding this code, you can run Gazelle with Bazel.
@@ -219,13 +219,16 @@ You can also pass additional arguments to Gazelle after a -- argument.
 ```shell
 bazel run //:gazelle -- update-repos -from_file=go.mod -to_macro=deps.bzl%go_dependencies
 ```
-After running update-repos, you might want to run bazel run //:gazelle again, as the update-repos command can affect the output of a normal run of Gazelle.
+this command will generate BUILD file in golang projects/packages<br/>
+After running update-repos, you might want to run bazel run //:gazelle again, as the update-repos command can affect the output of a normal run of Gazelle.<br/>
+For Bazel plugin in Intellij, click sync projects with BUILD file.
+
 
 At the end, BUILD file may look like this
 ```
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
-# gazelle:prefix github.com/example/project
+# gazelle:prefix gitlab.com/aionx/bazel-demo-projects/beginning-bazel
 gazelle(name = "gazelle")
 
 gazelle(
@@ -237,4 +240,9 @@ gazelle(
     ],
     command = "update-repos",
 )
+```
+run bazel commands
+```shell
+bazel run //:gazelle
+
 ```

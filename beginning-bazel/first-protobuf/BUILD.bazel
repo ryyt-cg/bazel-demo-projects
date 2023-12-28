@@ -1,0 +1,30 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "transmission_object_proto",
+    srcs = ["transmission_object.proto"],
+    visibility = ["//visibility:public"],
+)
+
+java_proto_library(
+    name = "transmission_object_java_proto",
+    visibility = ["//visibility:public"],
+    deps = [":transmission_object_proto"],
+)
+
+load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
+
+go_proto_library(
+    name = "transmission_object_go_proto",
+    importpath = "gitlab.com/aionx/bazel-demo-projects/beginning-bazel/first-protobuf",
+    proto = ":transmission_object_proto",
+    visibility = ["//visibility:public"],
+)
+
+go_library(
+    name = "first-protobuf",
+    embed = [":transmission_object_go_proto"],
+    importpath = "gitlab.com/aionx/bazel-demo-projects/beginning-bazel/first-protobuf",
+    visibility = ["//visibility:public"],
+)

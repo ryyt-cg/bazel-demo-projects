@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../java-hello-world/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../java-multiplier/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../java-multiplier/src/test/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../java-protobuf/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../maven-hello-world/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../maven-hello-world/src/test/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../.." />
@@ -20,6 +21,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Runner_deploy-ijar_703e4ec0" level="project" />
+    <orderEntry type="library" name="liblite_runtime_only-hjar_616331bb" level="project" />
+    <orderEntry type="library" name="libcore-hjar_616331bb" level="project" />
+    <orderEntry type="library" name="libtransmission_object_proto-speed-hjar_52116d8c" level="project" />
   </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="72835ec9-793e-4f1b-837b-f27ab28c9857" />
