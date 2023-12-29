@@ -1,0 +1,14 @@
+java_binary(
+    name = "java_grpc_echo_client",
+    srcs = ["src/main/java/com/raejz/grpc/EchoClient.java"],
+    main_class = "com.raejz.grpc.EchoClient",
+    runtime_deps = [
+        "@io_grpc_grpc_java//netty",
+    ],
+    deps = [
+        "//first-protobuf:transceiver_java_proto",
+        "//first-protobuf:transceiver_java_proto_grpc",
+        "//first-protobuf:transmission_object_java_proto",
+        "@io_grpc_grpc_java//api",
+    ],
+)
