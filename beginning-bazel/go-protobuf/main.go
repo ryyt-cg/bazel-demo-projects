@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/golang/protobuf/proto"
-	transmissionObject "gitlab.com/aionx/bazel-demo-projects/beginning-bazel/first-protobuf"
+	firstprotobuf "gitlab.com/aionx/bazel-demo-projects/beginning-bazel/first-protobuf"
 	"log"
 	"net"
 )
@@ -29,20 +29,21 @@ func main() {
 			"Unable to read from the buffer! Error: " + error.Error())
 	}
 	data := buffer[:size]
-	transmissionObject := &transmissionObject.TransmissionObject{}
-	error = proto.Unmarshal(data, transmissionObject)
+
+	tObject := &firstprotobuf.TransmissionObject{}
+	error = proto.Unmarshal(data, tObject)
 	if error != nil {
 		log.Panicln(
 			"Unable to unmarshal the buffer! Error: " + error.Error())
 	}
-	log.Println("Message = " + transmissionObject.GetMessage())
+	log.Println("Message = " + tObject.GetMessage())
 	log.Println("Value = " +
-		fmt.Sprintf("%f", transmissionObject.GetValue()))
-	transmissionObject.Message = "Echoed from Go: " +
-		transmissionObject.GetMessage()
-	transmissionObject.Value = 2 * transmissionObject.GetValue()
-	message, error := proto.Marshal(transmissionObject)
-	if error != nil {
+		fmt.Sprintf("%f", tObject.GetValue()))
+	tObject.Message = "Echoed from Go: " +
+		tObject.GetMessage()
+	tObject.Value = 2 * tObject.GetValue()
+	message, err := proto.Marshal(tObject)
+	if err != nil {
 		log.Panicln("Unable to marshal the object! Error: " + error.Error())
 	}
 	connection.Write(message)
