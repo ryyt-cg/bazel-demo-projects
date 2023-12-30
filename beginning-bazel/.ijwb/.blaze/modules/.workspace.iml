@@ -21,12 +21,16 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="libapi-hjar_4ce65546" level="project" />
     <orderEntry type="library" name="Runner_deploy-ijar_703e4ec0" level="project" />
     <orderEntry type="library" name="libstub-hjar_4fec9302" level="project" />
     <orderEntry type="library" name="liblite_runtime_only-hjar_616331bb" level="project" />
-    <orderEntry type="library" name="libtransceiver_java_proto_grpc-hjar_52116d8c" level="project" />
     <orderEntry type="library" name="libcore-hjar_616331bb" level="project" />
+    <orderEntry type="library" name="libapi-hjar_4ce65546" level="project" />
+    <orderEntry type="library" name="libtransceiver_java_proto_grpc-hjar_52116d8c" level="project" />
+    <orderEntry type="library" name="processed_logback-classic-1.4.7_eda474e1" level="project" />
+    <orderEntry type="library" name="processed_slf4j-api-2.0.9_c9f02a81" level="project" />
+    <orderEntry type="library" name="processed_lombok-1.18.30_4c48c341" level="project" />
+    <orderEntry type="library" name="processed_logback-core-1.4.7_fa9dd532" level="project" />
     <orderEntry type="library" name="libtransmission_object_proto-speed-hjar_52116d8c" level="project" />
     <orderEntry type="library" name="libtransceiver_proto-speed-hjar_52116d8c" level="project" />
   </component>

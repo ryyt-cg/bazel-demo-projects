@@ -3,5 +3,17 @@ java_binary(
     srcs = ["src/main/java/com/raejz/echo/EchoClient.java"],
     main_class = "com.raejz.echo.EchoClient",
     deps = [
+        "@maven//:org_projectlombok_lombok",
+        "@maven//:ch_qos_logback_logback_core",
+        "@maven//:ch_qos_logback_logback_classic",
+        "@maven//:org_slf4j_slf4j_api",
     ],
+)
+
+java_plugin(
+    name = "lombok-java",
+    generates_api = True,
+    processor_class = "lombok.launch.AnnotationProcessorHider$AnnotationProcessor",
+    visibility = ["//visibility:public"],
+    deps = ["@maven//:org_projectlombok_lombok"],
 )

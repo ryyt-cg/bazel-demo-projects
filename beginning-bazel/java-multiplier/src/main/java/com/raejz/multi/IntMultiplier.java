@@ -10,7 +10,7 @@ public class IntMultiplier {
     this.b = b;
   }
 
-  public int GetProduct() {
+  public int getProduct() {
     return a * b;
   }
 }

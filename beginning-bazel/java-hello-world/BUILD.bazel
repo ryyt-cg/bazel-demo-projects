@@ -2,5 +2,9 @@ java_binary(
     name = "JavaHelloWorld",
     srcs = ["src/main/java/com/raejz/greet/HelloWorld.java"],
     main_class = "com.raejz.greet.HelloWorld",
-    deps = ["//java-multiplier:IntMultiplierLib"],
+    deps = ["//java-multiplier:IntMultiplierLib",
+            "@maven//:ch_qos_logback_logback_core",
+            "@maven//:ch_qos_logback_logback_classic",
+            "@maven//:org_slf4j_slf4j_api",
+            ],
 )
