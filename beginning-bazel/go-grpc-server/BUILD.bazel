@@ -1,0 +1,19 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "go-grpc-server_lib",
+    srcs = ["main.go"],
+    importpath = "gitlab.com/aionx/bazel-demo-projects/beginning-bazel/go-grpc-server",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//first-protobuf:transceiver_go_proto",
+        "//first-protobuf:transmission_object_go_proto",
+        "@org_golang_google_grpc//:go_default_library",
+    ],
+)
+
+go_binary(
+    name = "go-grpc-server",
+    embed = [":go-grpc-server_lib"],
+    visibility = ["//visibility:public"],
+)

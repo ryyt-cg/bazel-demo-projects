@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/golang/protobuf/proto"
-	firstprotobuf "gitlab.com/aionx/bazel-demo-projects/beginning-bazel/first-protobuf"
+	"gitlab.com/aionx/bazel-demo-projects/beginning-bazel/first-protobuf/transmission"
 	"log"
 	"net"
 )
@@ -30,7 +30,7 @@ func main() {
 	}
 	data := buffer[:size]
 
-	tObject := &firstprotobuf.TransmissionObject{}
+	tObject := &transmission.TransmissionObject{}
 	error = proto.Unmarshal(data, tObject)
 	if error != nil {
 		log.Panicln(
