@@ -26,6 +26,7 @@ func main() {
 	r := mux.NewRouter()
 	// Routes consist of a path and a handler function.
 	r.HandleFunc("/", YourHandler)
+
 	// Bind to a port and pass our router in
 	port := getPort()
 	log.Println("running program's operating system target: " + runtime.GOOS)
