@@ -8,6 +8,7 @@ import (
 	"google.golang.org/grpc"
 	"log"
 	"net"
+	"strings"
 )
 
 type EchoServer struct{}
@@ -26,6 +27,13 @@ func (es *EchoServer) Echo(context context.Context, request *transceiver.EchoReq
 
 	return &transceiver.EchoResponse{
 		FromServer: &fromServer,
+	}, nil
+}
+
+func (es *EchoServer) UpperCase(contest context.Context, request *transceiver.UpperCaseRequest) (*transceiver.UpperCaseResponse, error) {
+	log.Println("Original = " + (*request).GetOriginal())
+	return &transceiver.UpperCaseResponse{
+		UpperCased: strings.ToUpper((*request).GetOriginal()),
 	}, nil
 }
 

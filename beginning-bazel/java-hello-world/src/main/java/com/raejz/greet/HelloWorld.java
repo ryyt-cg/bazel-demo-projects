@@ -10,6 +10,6 @@ public class HelloWorld {
   public static void main(String[] args) {
     log.info("Java: Hello, World!");
     IntMultiplier in = new IntMultiplier(3, 4);
-    log.info("result: " + in.getProduct());
+    log.info("result: {}", in.getProduct());
   }
 }

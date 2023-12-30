@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
 import transceiver.TransceiverGrpc;
 import transceiver.TransceiverOuterClass.EchoRequest;
 import transceiver.TransceiverOuterClass.EchoResponse;
+import transceiver.TransceiverOuterClass.UpperCaseRequest;
+import transceiver.TransceiverOuterClass.UpperCaseResponse;
 import transmission_object.TransmissionObjectOuterClass.TransmissionObject;
 
 public class EchoClient {
@@ -37,8 +39,16 @@ public class EchoClient {
                     .build())
             .build();
         EchoResponse response = stub.echo(request);
-        log.info("Received Message from server: ");
-        log.info(response.toString());
+        log.info("Received Message from server: {}", response);
+
+        UpperCaseRequest upperCaseRequest =
+            UpperCaseRequest.newBuilder()
+                .setOriginal(inputFromUser)
+                .build();
+        UpperCaseResponse upperCaseResponse =
+            stub.upperCase(upperCaseRequest);
+        log.info("Received upper cased: {}", upperCaseResponse);
+
         channel.shutdownNow();
       }
     } catch (Exception e) {

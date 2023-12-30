@@ -1,14 +1,13 @@
 # Beginning Bazel - Build and Test Java, Go and more
 
 <!-- TOC -->
-
 * [Beginning Bazel - Build and Test Java, Go and more](#beginning-bazel---build-and-test-java-go-and-more)
-    * [Create First Bazel Project](#create-first-bazel-project)
-        * [Configure Bazel Project](#configure-bazel-project)
-        * [Adding Package & Source Code](#adding-package--source-code)
-        * [Adding Source Code](#adding-source-code)
-    * [WORKSPACE FIle Functionality](#workspace-file-functionality)
-
+  * [Create First Bazel Project](#create-first-bazel-project)
+    * [Configure Bazel Project](#configure-bazel-project)
+    * [Adding Package & Source Code](#adding-package--source-code)
+  * [WORKSPACE FIle Functionality](#workspace-file-functionality)
+  * [Go Echo Server](#go-echo-server)
+  * [Demo API with Gazelle](#demo-api-with-gazelle)
 <!-- TOC -->
 
 ## Create First Bazel Project
@@ -241,8 +240,12 @@ gazelle(
     command = "update-repos",
 )
 ```
+
 run bazel commands
 ```shell
+bazel run //:gazelle-update-repos
 bazel run //:gazelle
-
 ```
+
+
+

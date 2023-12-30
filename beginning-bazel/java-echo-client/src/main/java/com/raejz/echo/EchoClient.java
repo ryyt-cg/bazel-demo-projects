@@ -15,6 +15,7 @@ public class EchoClient {
 
     try {
       final Socket socketToServer = new Socket("localhost", 1234);
+
       final BufferedReader inputFromServer = new BufferedReader(
           new InputStreamReader(socketToServer.getInputStream()));
       final BufferedReader commandLineInput = new BufferedReader(
@@ -23,11 +24,11 @@ public class EchoClient {
       final String inputFromUser = commandLineInput.readLine();
 
       if (inputFromUser != null) {
-        log.info("Received by Java: " + inputFromUser);
+        log.info("Received by Java: {}", inputFromUser);
         final PrintWriter outputToServer =
             new PrintWriter(socketToServer.getOutputStream(), true);
         outputToServer.println(inputFromUser);
-        log.info(inputFromServer.readLine());
+        log.info("input: {}", inputFromServer.readLine());
       }
       socketToServer.close();
     } catch (Exception e) {
