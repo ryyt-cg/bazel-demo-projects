@@ -90,6 +90,12 @@ maven_install(
         "ch.qos.logback:logback-core:1.4.7",
         "ch.qos.logback:logback-classic:1.4.7",
         "org.slf4j:slf4j-api:2.0.9",
+
+        "org.springframework.boot:spring-boot-starter-actuator:3.2.1",
+        "org.springframework.boot:spring-boot-starter-web:3.2.1",
+        "org.springframework.boot:spring-boot-starter-webflux:3.2.1",
+        "org.springframework.boot:spring-boot-starter-test:3.2.1",
+        "io.projectreactor:reactor-test:3.2.11.RELEASE",
     ] + IO_GRPC_GRPC_JAVA_ARTIFACTS + PROTOBUF_MAVEN_ARTIFACTS,
     generate_compat_repositories = True,
     override_targets = IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS,
@@ -101,3 +107,12 @@ maven_install(
 load("@maven//:compat.bzl", "compat_repositories")
 
 compat_repositories()
+
+## rules spring
+http_archive(
+    name = "rules_spring",
+    sha256 = "fa067d7ed07437a3be3a211564f485648fc9f2ecc827a189d98b60dc5a078fa2",
+    urls = [
+        "https://github.com/salesforce/rules_spring/releases/download/2.3.0/rules-spring-2.3.0.zip",
+    ],
+)

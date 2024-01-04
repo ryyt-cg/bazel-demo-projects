@@ -35,7 +35,7 @@ mkdir -pv java-hello-world/src/main/java/com/raejz/greet
 add HelloWorld.java and BUILD file<br/>
 add this to BUILD file to build java binary
 
-```
+```build
 java_binary(
     name = "JavaHelloWorld",
     srcs = ["src/main/java/com/raejz/greet/HelloWorld.java"],
@@ -65,7 +65,7 @@ mvn archetype:generate -DgroupId=com.raejz.hello -DartifactId=maven-hello-world 
 add BUILD file<br/>
 insert this into BUILD file to build java binary
 
-```
+```build
 java_binary(
     name = "MavenHelloWorld",
     srcs = ["src/main/java/com/raejz/hello/App.java"],
@@ -92,7 +92,7 @@ create java-multiplier directory<br/>
 add IntMultiplier.java
 add BUILD and insert this
 
-```
+```build
 java_library(
     name = "IntMultiplierLib",
     srcs = ["src/main/java/com/raejz/multi/IntMultiplier.java"],
@@ -109,14 +109,14 @@ java_test(
 
 modify BUILD in java-hello-world and add a dependency
 
-```
-deps = ["//java-multiplier:IntMultiplierLib"],
+```build
+deps = ["//java-multiplier:IntMultiplierLib"]
 ```
 
 ## WORKSPACE FIle Functionality
 add Golang configuration to WORKSPACE
 
-```
+```build
 ## Golang Configuration & Setup
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
@@ -138,7 +138,8 @@ go_register_toolchains(version = "1.21.3")
 ## Go Echo Server
 add echo_server.go<br/>
 add BUILD and insert this
-```
+
+```build
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_test", "go_library")
 
 go_binary(
@@ -151,7 +152,8 @@ load go_binary, go_test, go_library, etc. to the package
 
 ## Demo API with Gazelle
 add bazel and gazelle configuration to WORKSPACE file
-```
+
+```build
 ## Golang Configuration & Setup
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
@@ -186,11 +188,13 @@ go_rules_dependencies()
 go_register_toolchains(version = "1.21.3")
 gazelle_dependencies()
 ```
+
 version=1.21.3 is Golang SDK version>br/>
 add BUILD or BUILD.bazel file in root project
 
 **Important**: For Go projects, replace the string after prefix with the portion of your import path that corresponds to your repository.
-```
+
+```build
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
 # gazelle:prefix gitlab.com/aionx/bazel-demo-projects/beginning-bazel
@@ -203,7 +207,8 @@ bazel run //:gazelle
 This will generate new BUILD.bazel files for your project. You can run the same command in the future to update existing BUILD.bazel files to include new source files or options.
 
 You can write other gazelle rules to run alternate commands like update-repos.
-```
+
+```build
 gazelle(
     name = "gazelle-update-repos",
     args = [
@@ -214,6 +219,7 @@ gazelle(
     command = "update-repos",
 )
 ```
+
 You can also pass additional arguments to Gazelle after a -- argument.
 ```shell
 bazel run //:gazelle -- update-repos -from_file=go.mod -to_macro=deps.bzl%go_dependencies
@@ -224,7 +230,8 @@ For Bazel plugin in Intellij, click sync projects with BUILD file.
 
 
 At the end, BUILD file may look like this
-```
+
+```build
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
 # gazelle:prefix gitlab.com/aionx/bazel-demo-projects/beginning-bazel
