@@ -11,7 +11,6 @@
 <!-- TOC -->
 
 ## Create First Bazel Project
-
 ### Configure Bazel Project
 
 |   | Description                                                                                        |
@@ -24,16 +23,15 @@ This is a minimum Bazel project and the WORKSPACE file location should always be
 Bazel project.
 
 ### Adding Package & Source Code
-
 * Create a directory for Java src. Bazel does not require configuring maven-like project structure.
-  By Java convention, let's create maven-like project.
+  Per Java convention, let's create maven-like project.
 
 ```shell
 mkdir -pv java-hello-world/src/main/java/com/raejz/greet
 ```
 
-add HelloWorld.java and BUILD file<br/>
-add this to BUILD file to build java binary
+add HelloWorld.java and BUILD.bazel file<br/>
+add this to BUILD.bazel file to build java binary
 
 ```build
 java_binary(
@@ -45,19 +43,16 @@ java_binary(
 ```
 
 build the binary
-
 ```shell
 bazel build java-hello-world:JavaHelloWorld
 ```
 
 run the binary
-
 ```shell
 bazel run java-hello-world:JavaHelloWorld
 ```
 
 * Create a directory for maven package
-
 ```shell
 mvn archetype:generate -DgroupId=com.raejz.hello -DartifactId=maven-hello-world -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
 ```
@@ -75,13 +70,11 @@ java_binary(
 ```
 
 build the binary
-
 ```shell
 bazel build maven-hello-world:MavenHelloWorld
 ```
 
 run the binary
-
 ```shell
 bazel run maven-hello-world:MavenHelloWorld
 ```
@@ -89,8 +82,8 @@ bazel run maven-hello-world:MavenHelloWorld
 * Creating and Using Dependencies
 
 create java-multiplier directory<br/>
-add IntMultiplier.java
-add BUILD and insert this
+add IntMultiplier.java<br/>
+add BUILD and insert this<br/>
 
 ```build
 java_library(
@@ -115,7 +108,6 @@ deps = ["//java-multiplier:IntMultiplierLib"]
 
 ## WORKSPACE FIle Functionality
 add Golang configuration to WORKSPACE
-
 ```build
 ## Golang Configuration & Setup
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
